@@ -18,5 +18,11 @@ Move the cursor to the desired paste location.
 Press p to paste after the cursor, or P to paste before.
 
 
+press the Esc key to go back to the normal mode, which is also known as command mode.
+Type u to undo the last change. In Vim, the u command also accepts quantifiers. For example, if you want to undo the four last changes, you would use 4u.
 
+Use Ctrl-R (press and hold Ctrl and press r) to redo the last change. In Vim, you can also use quantifiers. For example, if you want to redo the 4 last changes, you would type 4Ctrl-R.
 
+My favorite way is to select your block of code (with [V]isual line mode normally), then press > or <.
+
+If you want to tab more than once, 2> or 3> to repeat it.
