@@ -3,7 +3,7 @@
 **Contents**
 
 * [Filesystem](#Filesystem)
-* [Users & Groups](#Users)
+* [Users & Groups](#Users-and-Groups)
 * [Ownership and Permissions](#Ownership-and-Permissions)
 
 Todo:
@@ -62,7 +62,7 @@ From top to bottom, the directories you are seeing are as follows.
 
 ---
 
-## Users
+## Users-and-Groups
 
 References:
 
@@ -85,6 +85,7 @@ The root user has the rights to access anything on its own server and make syste
 
 Groups are collections of zero or more users. A user belongs to a default group, and can also be a member of any of the other groups on a server.
 An easy way to view all the groups and their members is to look in the `/etc/group` file on a server.
+
 ---
 
 ## Ownership-and-Permissions
