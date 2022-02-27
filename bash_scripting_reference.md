@@ -1,17 +1,18 @@
 # Bash Scripting
 
 Reference:
-* https://learnxinyminutes.com/docs/bash/
+
+* <https://learnxinyminutes.com/docs/bash/>
 
 ## Different types of comparisons and file checks
 
-File tests: https://tldp.org/LDP/abs/html/fto.html
-Comparison operators: https://tldp.org/LDP/abs/html/comparison-ops.html
+File tests: <https://tldp.org/LDP/abs/html/fto.html>
+Comparison operators: <https://tldp.org/LDP/abs/html/comparison-ops.html>
 
 ## Different types of brackets
 
 For complete reference with more examples check this...
-Reference: https://dev.to/rpalo/bash-brackets-quick-reference-4eh6
+Reference: <https://dev.to/rpalo/bash-brackets-quick-reference-4eh6>
 
 * ( Single Parentheses )
   Single parenthesis will run the commands inside in a subshell.
@@ -26,6 +27,7 @@ echo $a # This string
 * $( Dollar Single Parentheses )
 
 Interpolating a subshell command output into a string
+
 ```
 intro="My name is $( whoami )"
 echo $intro
@@ -58,6 +60,7 @@ echo $b
 * [ Single Square Brackets ]
 
 The commands inside are run and checked for "truthiness." Strings of zero length are false.
+
 ```
 if [ -f my_friends.txt ]
 then
@@ -94,35 +97,6 @@ echo {01..10}
 This is for variable interpolation.
 (no spaces around the contents)
 
-
 ```
 "Signing in as ${name:-$( whoami )}"
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
