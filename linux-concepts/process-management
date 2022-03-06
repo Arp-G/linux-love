@@ -2,31 +2,3 @@
 
 `/proc` is a virtual file system where the kernel keeps all the most update process information.
 Porgrams like top, htop, etc parses these files in `/proc` and use these to fetch latest updates on various running processes.
-
-
-## lsof - List of open files
-
-* Which files are open?
-`lsof`
-
-* Which processes have this file open?
-`lsof /var/log/nginx-error.log`
-
-* Which files does process X have open?
-`lsof -p 1`
-
-* Where is the binary for this process?
-`lsof -p ABC | grep bin`
-
-* Which shared libraries(.so files) is this program using?
-`lsof -p PID | grep .so`
-
-* Where is this thing logging to?
-`lsof -p ABC | grep log`
-
-* Which files does user XYZ have open?
-`lsof -u XYZ`
-
-* Which process is listening on Port X (or using Protocol Y)?
-`lsof -i :80`
-`lsof -i tcp`
