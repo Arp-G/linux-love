@@ -215,7 +215,7 @@ grep –e "cat" –e "bat" –e "dog" geekfile.txt  # Specify expression with -e
 Search for process pids using process name: `pgrep -i nginx`
 
 
-# lsof 
+## lsof 
 
 List of open files
 
@@ -249,7 +249,7 @@ List of open files
 Report a snapshot of the current processes
 
 `ps`    -> Shows the processes for the current shell
-`ps -A` -> Sho all processes
+`ps -A` -> Show all processes
 
 
 ## find
@@ -336,3 +336,102 @@ du -h ~
 # Get the timestamp of last modified using --time option
 du --time -h /home
 ```
+
+## watch
+
+Most common use is execute a command every n seconds example `watch -n 5 'ls -l'` will list the content of the current directory every 5 seconds.
+
+
+## tar
+
+tar is an archiving utility.
+
+Basic usage examples
+
+```
+
+# Use the 'cvf' option to create a uncompressed tar archive
+tar cvf code.tar *.c
+
+# Use the 'xvf' option to uncompress a tar archive
+tar xvf code.tar
+
+# For gzip compression on the tar Archive, using option -z
+tar cvzf code.tar.gz *.c
+
+# For extracting gzip
+tar xvzf code.tar.gz
+```
+
+## gzip
+
+Compress or expand files
+
+Basic usage examples
+
+```
+
+# Creates a gzipped file and deletes Original file, to keep the orginal file add the `-k` option
+gzip big_db_dump.csv
+
+
+# Specify compression level with options 1 to 9, where 9 is highest compression but will take more time
+gzip -9 big_db_dump.csv
+
+# Decompress a file
+gzip -d big_db_dump.gz
+```
+
+## zip
+
+ZIP is a compression and file packaging utility for Unix.
+
+`zip [options] zipfile files_list`
+
+Basic usage examples
+
+```
+zip myfile.zip filename.txt
+
+unzip myfile.zip 
+```
+
+## xz
+
+Compress or decompress .xz and .lzma files.
+Files compressed with LZMA/LZMA2 compression algorithm which can give higher compression ratio than gzip.
+
+Basic usage
+
+```
+# compress
+xz ubuntu.iso
+
+# decompress
+xz -d ubuntu.iso
+```
+
+**Notes on different types of archiving strategies in Linux:**
+
+* `.tar`                -> uncompressed archive file, often called a tarball, it is a collection of files wrapped up in one single file for easy storage.
+                           tar also preserves directory structures and file meta data or attributes. 
+  `.zip`                -> (usually) compressed archive file
+  `.gz`                 -> file (archive or not) compressed using gzip
+  `.xz`                 -> files compressed with LZMA/LZMA2 compression algorithm
+  `.tar.gz` OR `.tgz`   -> tar file compressed with gzip algorithm
+  `.tar.xz`OR `.txz`    -> tar file compressed with xz
+
+* The gzip and xz commands cannot not compress a directory into a single archive file.
+* So gzip and xz can be used with tar to compress arbitrary number of files and folders the resulting file has an extension of `.tgz`/`.tar.gz` or `.tar.xz`/`.txz` 
+  and is commonly called a tarball. You have to use `tar` to combine all the files in the directory into a single tar file and then compress it like `tar zcvf dir1.tar.gz dir1/`
+* zip is more popular on windows and gzip is more popular on linux, unix and macos.
+* zip files can package and compress files/directories on by it’s own, unlike gzip or xz, who needs the help of another command like `tar` to archive/package the files.
+
+## System Info
+
+* `uname`                                     -> system name
+* `sudo lshw`                                 ->  list hardware details, use `sudo lshw --short` for summary
+* `lscpu`                                     -> CPU info
+* `lsb_release -a` or `cat /etc/os-release`   -> Get installed linux distro info
+
+
