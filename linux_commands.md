@@ -170,37 +170,37 @@ AWK is a domain-specific language designed for text processing and typically use
 
 **AWK variables**
 
-`$0`          -> Entire line
-`$1, $2, ...` -> First field, second field and so on
-`NF`          -> Number of fields in current record
-`NR`          -> Line number of the current record
-`FILENAME`    -> Reference current input file
-`FS`          -> Field separator of input file (default whitespace)
-`RS`          -> Record separator of input file (default newline)
+* `$0`          -> Entire line
+* `$1, $2, ...` -> First field, second field and so on
+* `NF`          -> Number of fields in current record
+* `NR`          -> Line number of the current record
+* `FILENAME`    -> Reference current input file
+* `FS`          -> Field separator of input file (default whitespace)
+* `RS`          -> Record separator of input file (default newline)
 
 Execute action for matched pattern 'pattern' on file 'file', use `;` to separate two actions
 `awk '/pattern/ {action}' file`
 
-`~`                 Match opterator
-`-F`                Command line option to specify input field delimiter
-`BEGIN` and `END`   Denotes block executed once at start and at end
+* `~`                 Match opterator
+* `-F`                Command line option to specify input field delimiter
+* `BEGIN` and `END`   Denotes block executed once at start and at end
 
 **Examples**
 
-`awk '{print $1}' file`                         ->  Print first field for each record in file
-`awk '/regex/' file`                            ->  Print only lines that match regex in file
-`awk '!/regex/' file`                           ->  Print only lines that do not match regex in file
-`awk '$2 == "foo"' file`                        ->  Print any line where field 2 is equal to "foo" in file
-`awk '$2 != "foo"' file`                        ->  Print lines where field 2 is NOT equal to "foo" in file
-`awk '$1 ~ /regex/' file`                       ->  Print line if field 1 matches regex in file
-`awk '$1 !~ /regex/' file`                      ->  Print line if field 1 does NOT match regex in file
-`awk 'NR!=1{print $1}' file`                    ->  Print first field for each record in file excluding the first record
-`awk 'END{print NR}' file`                      ->  Count lines in file
-`awk '/foo/{n++}; END {print n+0}' file`        ->  Print total number of lines that contain foo
-`awk '{total=total+NF};END{print total}' file`  ->  Print total number of fields in all lines
-`awk '/regex/{getline;print}' file`             ->  Print line immediately after regex, but not line containing regex in file
-`awk 'length > 32' file`                        ->  Print lines with more than 32 characters in file
-`awk 'NR==12' file`                             ->  Print line number 12 of file
+* `awk '{print $1}' file`                         ->  Print first field for each record in file
+* `awk '/regex/' file`                            ->  Print only lines that match regex in file
+* `awk '!/regex/' file`                           ->  Print only lines that do not match regex in file
+* `awk '$2 == "foo"' file`                        ->  Print any line where field 2 is equal to "foo" in file
+* `awk '$2 != "foo"' file`                        ->  Print lines where field 2 is NOT equal to "foo" in file
+* `awk '$1 ~ /regex/' file`                       ->  Print line if field 1 matches regex in file
+* `awk '$1 !~ /regex/' file`                      ->  Print line if field 1 does NOT match regex in file
+* `awk 'NR!=1{print $1}' file`                    ->  Print first field for each record in file excluding the first record
+* `awk 'END{print NR}' file`                      ->  Count lines in file
+* `awk '/foo/{n++}; END {print n+0}' file`        ->  Print total number of lines that contain foo
+* `awk '{total=total+NF};END{print total}' file`  ->  Print total number of fields in all lines
+* `awk '/regex/{getline;print}' file`             ->  Print line immediately after regex, but not line containing regex in file
+* `awk 'length > 32' file`                        ->  Print lines with more than 32 characters in file
+* `awk 'NR==12' file`                             ->  Print line number 12 of file
 
 ### tee
 
