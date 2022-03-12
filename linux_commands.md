@@ -12,6 +12,9 @@
 2. Process Management
     * [lsof](#lsof)
     * [ps](#ps)
+    * [jobs](#jobs)
+    * [bg](#bg)
+    * [fg](#fg)
 3. Filesystem
     * [find](#find)
     * [df](#df)
@@ -297,6 +300,56 @@ Report a snapshot of the current processes
 
 `ps`    -> Shows the processes for the current shell
 `ps -A` -> Show all processes
+
+### jobs
+
+Lists all jobs on the system; active, stopped, or otherwise.
+
+Example
+
+```
+sleep 5000
+# ctrl+z to stop job
+
+jobs
+[1]+  Stopped                 sleep 500
+```
+
+### bg
+
+Resume background job `bg %<job-id>`
+
+```
+# start and stop a job using ctrl+z
+sleep 5000
+
+# Check job is stopped
+jobs
+[1]+  Stopped                 sleep 5000
+
+# Resume job id 1
+bg %1
+[1]+ sleep 5000 &
+
+# Job is now resumed and running
+jobs
+[1]+  Running                 sleep 5000 &
+```
+
+### fg
+
+Move a job to foreground `fg %<job-id>`
+
+```
+# Start a new background job
+# Using a `&` after the command will run the command in background
+sleep 500 &
+[2] 2617
+
+# Bring it to foreground
+fg %2
+sleep 500
+```
 
 ---
 
