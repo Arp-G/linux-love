@@ -4,41 +4,41 @@
 
 1. Data Manipulation
     * [sed](#sed)
-    * tr
-    * cut
-    * awk
-    * tee
-    * grep && pgrep
+    * [tr](#tr)
+    * [cut](#cut)
+    * [awk](#awk)
+    * [tee](#tee)
+    * [grep && pgrep](#grep && pgrep)
 2. Process Management
-    * lsof
-    * ps
+    * [lsof](#lsof)
+    * [ps](#ps)
 3. Filesystem
-    * find
-    * df
-    * du
+    * [find](#find)
+    * [df](#df)
+    * [du](#du)
 4. Archiving
-    * tar
-    * gzip
-    * zip
-    * xz
+    * [tar](#tar)
+    * [gzip](#gzip)
+    * [zip](#zip)
+    * [xz](#xz)
 5. System Info
-    * uname
-    * lshw
-    * lscpu
-    * lsb_release
-    * hostname
+    * [uname](#uname)
+    * [lshw](#lshw)
+    * [lscpu](#lscpu)
+    * [lsb_release](#lsb_release)
+    * [hostname](#hostname)
 6. Networking
-    * ip
-    * tracepath
-    * ping
-    * mtr
-    * ss
-    * tcpdump
-    * dig
-    * curl
-    * wget
+    * [ip](#ip)
+    * [tracepath](#tracepath)
+    * [ping](#ping)
+    * [mtr](#mtr)
+    * [ss](#ss)
+    * [tcpdump](#tcpdump)
+    * [dig](#dig)
+    * [curl](#curl)
+    * [wget](#wget)
 7. Misc
-    * watch
+    * [watch](#watch)
 
 ---
 
