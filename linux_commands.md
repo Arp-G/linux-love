@@ -8,7 +8,7 @@
     * [cut](#cut)
     * [awk](#awk)
     * [tee](#tee)
-    * [grep && pgrep](##grep--pgrep)
+    * [grep && pgrep](#grep--pgrep)
 2. Process Management
     * [lsof](#lsof)
     * [ps](#ps)
