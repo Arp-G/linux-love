@@ -91,6 +91,7 @@ I AM IN MIXED CASE
 ```
 
 * Delete characters using `-d` option
+
 ```
 arpan@Arpan-desktop:~$ echo "I am in mixed case" | tr -d a
 I m in mixed cse
@@ -160,7 +161,7 @@ ls -l | sed 's/\s\+/ /g' |  cut -d " " -f 9
 
 ### awk
 
-*Refs*
+*Refs:*
 
 * https://www.shortcutfoo.com/app/dojos/awk/cheatsheet
 * https://www.youtube.com/watch?v=9YOZmI-zWok
@@ -179,7 +180,6 @@ AWK is a domain-specific language designed for text processing and typically use
 
 Execute action for matched pattern 'pattern' on file 'file', use `;` to separate two actions
 `awk '/pattern/ {action}' file`
-
 
 `~`                 Match opterator
 `-F`                Command line option to specify input field delimiter
@@ -204,12 +204,11 @@ Execute action for matched pattern 'pattern' on file 'file', use `;` to separate
 
 ### tee
 
-Ref: https://www.youtube.com/watch?v=D_HhOq6sbZw
+*Refs:* https://www.youtube.com/watch?v=D_HhOq6sbZw
 
 Read from standard input and write to standard output and files.
 
 When piping commands in linux if we want to store the intermidiate result of some command in a file but also pipe it to the next command we will either have to execute two separate commands or use `tee`
-
 
 ```
 sort animals.txt > sorted_animals.txt
@@ -258,11 +257,12 @@ grep –e "cat" –e "bat" –e "dog" geekfile.txt  # Specify expression with -e
 
 `pgrep` looks up processes based on name and other attributes.
 Search for process pids using process name: `pgrep -i nginx`
+
 ---
 
 ## Process management
 
-### lsof 
+### lsof
 
 List of open files
 
@@ -470,35 +470,41 @@ xz -d ubuntu.iso
   `.tar.xz`OR `.txz`    -> tar file compressed with xz
 
 * The gzip and xz commands cannot not compress a directory into a single archive file.
-* So gzip and xz can be used with tar to compress arbitrary number of files and folders the resulting file has an extension of `.tgz`/`.tar.gz` or `.tar.xz`/`.txz` 
+* So gzip and xz can be used with tar to compress arbitrary number of files and folders the resulting file has an extension of `.tgz`/`.tar.gz` or `.tar.xz`/`.txz`
   and is commonly called a tarball. You have to use `tar` to combine all the files in the directory into a single tar file and then compress it like `tar zcvf dir1.tar.gz dir1/`
 * zip is more popular on windows and gzip is more popular on linux, unix and macos.
 * zip files can package and compress files/directories on by it’s own, unlike gzip or xz, who needs the help of another command like `tar` to archive/package the files.
+
 ---
 
 ## System Info
 
 ### uname
+
 system name
 
 ### lshw
+
 list hardware details, use `sudo lshw --short` for summary
 
 ### lscpu
+
 CPU info
 
 ### lsb_release
+
 `lsb_release -a` or `cat /etc/os-release`
 Get installed linux distro info
 
 ### hostname
+
 Gets Linux hostname
 
 ---
 
 ## Networking
 
-Ref: https://mindmajix.com/linux-networking-commands-best-examples
+*Refs:* https://mindmajix.com/linux-networking-commands-best-examples
 
 ### ip
 
@@ -532,7 +538,7 @@ Get private Ip: `hostname -I` OR `ip a show eth0`
 Traces path to a network host discovering MTU along this path.
 (MTU - maximum transmission unit (MTU) is the largest packet or frame size that can be sent in a packet- or frame-based network such as the internet)
 
-It provides the names and identifies every device on the path. 
+It provides the names and identifies every device on the path.
 It follows the route to the destination
 It determines where the network latency comes from and reports it.
 
@@ -600,8 +606,8 @@ captures the traffic that is passing through the network interface and displays 
 
 Syntax: `tcpdump -i <network_device> <optional-type>`
 
-Example: 
- 
+Example:
+
 ```
 tcpdump -i eth0
 tcpdump -i eth0 tcp
@@ -613,7 +619,6 @@ tcpdump -i eth0 port 80
 Domain Information Groper - used in DNS lookup to query the DNS name server.
 
 Syntax: `dig <domainName> <optional-record-type>`
-
 
 ```
 # Gives A records by default
@@ -627,7 +632,7 @@ Note there other commands for DNS lookup as well like `host` and `nslookup` but 
 
 ### curl
 
-Ref: https://flaviocopes.com/http-curl/
+*Refs:* https://flaviocopes.com/http-curl/
 
 Transferring data from or to a server
 
@@ -671,7 +676,7 @@ curl -d "@my-file.json" -X POST https://flaviocopes.com/
 
 ### wget
 
-Ref: https://www.digitalocean.com/community/tutorials/how-to-use-wget-to-download-files-and-interact-with-rest-apis
+*Refs:* https://www.digitalocean.com/community/tutorials/how-to-use-wget-to-download-files-and-interact-with-rest-apis
 
 Network downloader
 
@@ -703,6 +708,7 @@ wget -c --limit-rate 1k -q --show-progress <URL>
 # Sending request to some REST API
 wget --method=post -O- -q --body-data='{"title": "Wget POST"}' --header=Content-Type:application/json https://jsonplaceholder.typicode.com/posts
 ```
+
 ---
 
 ## Misc
