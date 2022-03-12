@@ -3,7 +3,7 @@
 ## *Index:-*
 
 1. Data Manipulation
-    * [sed](### sed)
+    * [sed](###sed)
     * tr
     * cut
     * awk
