@@ -1,4 +1,50 @@
-## sed
+# Usefull Linux commands
+
+## *Index:-*
+
+1. Data Manipulation
+    * [sed](###sed)
+    * tr
+    * cut
+    * awk
+    * tee
+    * grep && pgrep
+2. Process Management
+    * lsof
+    * ps
+3. Filesystem
+    * find
+    * df
+    * du
+4. Archiving
+    * tar
+    * gzip
+    * zip
+    * xz
+5. System Info
+    * uname
+    * lshw
+    * lscpu
+    * lsb_release
+    * hostname
+6. Networking
+    * ip
+    * tracepath
+    * ping
+    * mtr
+    * ss
+    * tcpdump
+    * dig
+    * curl
+    * wget
+7. Misc
+    * watch
+
+---
+
+## Data Manipulation
+
+### sed
 
 Stream editor for filtering and transforming text
 
@@ -33,7 +79,7 @@ Use the `-i` (inline) flag to modify and update the file
 $ sed -e 's/\(.*\)/\U\1/' input.txt > output.txt
 ```
 
-## tr
+### tr
 
 Translate or delete characters
 
@@ -60,7 +106,7 @@ arpan@Arpan-desktop:~$ echo "Happppy birthday toooooooo yoooou" | tr -s 'op'
 Hapy birthday to you
 ```
 
-## cut
+### cut
 
 Remove sections from each line of files.
 
@@ -112,7 +158,7 @@ zip_3.0-11build1_amd64.deb
 ls -l | sed 's/\s\+/ /g' |  cut -d " " -f 9
 ```
 
-## awk
+### awk
 
 *Refs*
 
@@ -156,8 +202,7 @@ Execute action for matched pattern 'pattern' on file 'file', use `;` to separate
 `awk 'length > 32' file`                        ->  Print lines with more than 32 characters in file
 `awk 'NR==12' file`                             ->  Print line number 12 of file
 
-
-## tee
+### tee
 
 Ref: https://www.youtube.com/watch?v=D_HhOq6sbZw
 
@@ -188,7 +233,7 @@ Example: Download a webpage and calculate its hash using different algorithms at
 
 `wget -o - https://www.google.com | tee >(md5sum > file1.md5) >(sha1sum > file2.sh1) > google.txt`
 
-## grep && pgrep
+### grep && pgrep
 
 grep  searches  for  PATTERNS in FILE(s)
 
@@ -213,9 +258,11 @@ grep –e "cat" –e "bat" –e "dog" geekfile.txt  # Specify expression with -e
 
 `pgrep` looks up processes based on name and other attributes.
 Search for process pids using process name: `pgrep -i nginx`
+---
 
+## Process management
 
-## lsof 
+### lsof 
 
 List of open files
 
@@ -244,15 +291,18 @@ List of open files
 `lsof -i :80`
 `lsof -i tcp`
 
-## ps
+### ps
 
 Report a snapshot of the current processes
 
 `ps`    -> Shows the processes for the current shell
 `ps -A` -> Show all processes
 
+---
 
-## find
+## Filesystem
+
+### find
 
 Search for files in a directory hierarchy.
 
@@ -299,7 +349,7 @@ find / -size -10k
 find . -size +10M -size -20M
 ```
 
-## df
+### df
 
 Report file system disk space usage
 
@@ -322,7 +372,7 @@ df /home/dev/test.rb
 df -h /home
 ```
 
-## du
+### du
 
 Short for disk usage, is used to estimate file space usage.
 
@@ -336,13 +386,11 @@ du -h ~
 # Get the timestamp of last modified using --time option
 du --time -h /home
 ```
+---
 
-## watch
+## Archive Management
 
-Most common use is execute a command every n seconds example `watch -n 5 'ls -l'` will list the content of the current directory every 5 seconds.
-
-
-## tar
+### tar
 
 tar is an archiving utility.
 
@@ -363,7 +411,7 @@ tar cvzf code.tar.gz *.c
 tar xvzf code.tar.gz
 ```
 
-## gzip
+### gzip
 
 Compress or expand files
 
@@ -382,7 +430,7 @@ gzip -9 big_db_dump.csv
 gzip -d big_db_dump.gz
 ```
 
-## zip
+### zip
 
 ZIP is a compression and file packaging utility for Unix.
 
@@ -396,7 +444,7 @@ zip myfile.zip filename.txt
 unzip myfile.zip 
 ```
 
-## xz
+### xz
 
 Compress or decompress .xz and .lzma files.
 Files compressed with LZMA/LZMA2 compression algorithm which can give higher compression ratio than gzip.
@@ -426,12 +474,239 @@ xz -d ubuntu.iso
   and is commonly called a tarball. You have to use `tar` to combine all the files in the directory into a single tar file and then compress it like `tar zcvf dir1.tar.gz dir1/`
 * zip is more popular on windows and gzip is more popular on linux, unix and macos.
 * zip files can package and compress files/directories on by it’s own, unlike gzip or xz, who needs the help of another command like `tar` to archive/package the files.
+---
 
 ## System Info
 
-* `uname`                                     -> system name
-* `sudo lshw`                                 ->  list hardware details, use `sudo lshw --short` for summary
-* `lscpu`                                     -> CPU info
-* `lsb_release -a` or `cat /etc/os-release`   -> Get installed linux distro info
+### uname
+system name
+
+### lshw
+list hardware details, use `sudo lshw --short` for summary
+
+### lscpu
+CPU info
+
+### lsb_release
+`lsb_release -a` or `cat /etc/os-release`
+Get installed linux distro info
+
+### hostname
+Gets Linux hostname
+
+---
+
+## Networking
+
+Ref: https://mindmajix.com/linux-networking-commands-best-examples
+
+### ip
+
+Show / manipulate routing, network devices, interfaces and tunnels
+
+Basic usage
+
+```
+# Show all network interfaces
+ip a
+
+# Show the eth0 is a physical interface representing Ethernet network card.
+ip a show eth0
+```
+
+Understand the output: https://goinbigdata.com/demystifying-ifconfig-and-network-interfaces-in-linux/
+
+*Common network interfaces:*
+
+* `eth0` is a physical interface representing Ethernet network card. It’s used for communication with other computers on the network and on the Internet.
+
+* `lo` is a special virtual network interface called loopback device. Loopback is used mainly for diagnostics and troubleshooting, and to connect to services running on local host.
+
+* `docker0` is a virtual bridge interface created by Docker.
+
+Get public IP:  `curl ifconfig.me`
+Get private Ip: `hostname -I` OR `ip a show eth0`
+
+### tracepath
+
+Traces path to a network host discovering MTU along this path.
+(MTU - maximum transmission unit (MTU) is the largest packet or frame size that can be sent in a packet- or frame-based network such as the internet)
+
+It provides the names and identifies every device on the path. 
+It follows the route to the destination
+It determines where the network latency comes from and reports it.
+
+Basic Usage example
+
+```
+arpan@Arpan-desktop:~$ tracepath google.com
+
+ 1?: [LOCALHOST]                      pmtu 1500
+ 1:  Arpan-desktop.mshome.net                              0.293ms
+ 1:  Arpan-desktop.mshome.net                              0.264ms
+ 2:  domain.name.dlink.com                                 0.916ms
+ 3:  10.20.17.129                                          1.855ms
+ 4:  node-103-217-242-65.alliancebroadband.in              3.919ms
+ 5:  192.168.199.86                                       43.085ms
+ 6:  72.14.197.2                                          43.191ms
+```
+
+### ping
+
+Linux ping is one of the most used network troubleshooting commands. It basically checks for the network connectivity between two nodes.
+The ping command sends the ICMP echo request to check the network connectivity.
+Example: `ping google.com`
+
+### mtr
+
+Combination of ping and the traceroute command. It continuously displays information regarding the packets sent with the ping time of each hop.
+Usefull for network debugging
+
+Example: `mtr google.com`
+
+### ss
+
+Utility to investigate sockets
+This command gives information about all TCP, UDP, and UNIX socket connections.
+
+Flags
+
+-t TCP sockets
+-u UDP sockets
+-x UNIX sockets
+
+Add "a" to show both connected and listening sockets or use "l" for listing listening sockets only.
+
+Example usage:
+
+```
+
+# List all connected and listening unix sockets
+ss -ta
+
+# List all only listening UDP sockets
+ss -lu
+
+# list of all the established sockets of TCP for IPV4
+ss -t4 state established
+
+# list of all connected ports for a specific IP address
+ss dst XXX.XXX.XXX.XXX
+```
+
+### tcpdump
+
+captures the traffic that is passing through the network interface and displays it
+
+Syntax: `tcpdump -i <network_device> <optional-type>`
+
+Example: 
+ 
+```
+tcpdump -i eth0
+tcpdump -i eth0 tcp
+tcpdump -i eth0 port 80
+```
+
+### dig
+
+Domain Information Groper - used in DNS lookup to query the DNS name server.
+
+Syntax: `dig <domainName> <optional-record-type>`
 
 
+```
+# Gives A records by default
+dig google.com
+
+# Gives MX records
+dig google.com MX
+```
+
+Note there other commands for DNS lookup as well like `host` and `nslookup` but `dig` is preffered.
+
+### curl
+
+Ref: https://flaviocopes.com/http-curl/
+
+Transferring data from or to a server
+
+Syntax: `curl [options] [URL...]`
+
+-o           -> save to file specified
+-O           -> save to file with original filename
+-I           -> Fetch only headers
+-L           -> Follow redirects using HTTP Location headers
+-X           -> Specify http method
+-d           -> Specify data or data file
+-H           -> Specify headers
+-u           -> Basic HTTP Authentication `-u user:pass`
+--user-agent -> user agent tells the server which client is performing the request. By default curl sends the curl/<version> user agent
+
+Usage Examples
+
+```
+
+# Spits out download content to terminal
+curl google.com
+
+# saves to file
+curl -o webpage.html google.com
+
+# saves with original filename
+curl -O google.com
+
+# Fetch only headers
+curl -I google.com
+
+# Use `-L` to follow redirects(by default it doesn’t follow the HTTP Location headers)
+curl -L google.com
+
+# Use the `-X` option to specify http method, -H to specify header and -d to specify data
+curl -d '{"option": "value", "something": "anothervalue"}' -H "Content-Type: application/json" -X POST https://flaviocopes.com/
+
+# You can also use -d to specify a file from which the data will be sent
+curl -d "@my-file.json" -X POST https://flaviocopes.com/
+```
+
+### wget
+
+Ref: https://www.digitalocean.com/community/tutorials/how-to-use-wget-to-download-files-and-interact-with-rest-apis
+
+Network downloader
+
+Syntax: `wget [option][URL]`
+
+
+```
+
+# Save to filename using `-O`
+wget -O terraform.zip https://releases.hashicorp.com/terraform/0.12.2/terraform_0.12.2_linux_amd64.zip
+
+# Save to specific directory
+wget -P Downloads/  https://code.jquery.com/jquery-3.6.0.min.js
+
+# Download in background
+wget -b [URL]
+
+# Check progress of background downloads
+tail -f wget-log
+
+# Stopping and resume downloads
+
+# -q is to show less details, --limit-rate 1k will limit download rate to 1kb
+wget --limit-rate 1k -q --show-progress <URL>
+
+# Use `-c` option to resume, it wonly works when wget is again excuted from same directory
+wget -c --limit-rate 1k -q --show-progress <URL>
+
+# Sending request to some REST API
+wget --method=post -O- -q --body-data='{"title": "Wget POST"}' --header=Content-Type:application/json https://jsonplaceholder.typicode.com/posts
+```
+---
+
+## Misc
+
+### watch
+
+Most common use is execute a command every n seconds example `watch -n 5 'ls -l'` will list the content of the current directory every 5 seconds.
