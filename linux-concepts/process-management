@@ -1,4 +1,0 @@
-## Proc filesystem
-
-`/proc` is a virtual file system where the kernel keeps all the most update process information.
-Porgrams like top, htop, etc parses these files in `/proc` and use these to fetch latest updates on various running processes.
