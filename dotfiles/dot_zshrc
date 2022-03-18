@@ -128,8 +128,16 @@ autoload -U compinit && compinit # reload zsh-completions
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Check if we are running on WSL or not
+# then apply corresponding powerlevel10k theme
+if grep -iq WSL /proc/version; then
+  P10_CONFIG_FILE=~/.p10k_win.zsh
+else
+  P10_CONFIG_FILE=~/.p10k.zsh
+fi
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $P10_CONFIG_FILE ]] || source $P10_CONFIG_FILE
 
 # == History related setup ==
 
