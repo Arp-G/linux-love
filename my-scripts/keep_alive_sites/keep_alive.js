@@ -11,7 +11,7 @@
 
   * Copy script:                                sudo cp -r my-scripts/keep_alive_sites /usr/local/bin/keep_alive
   * Give executable permission:                 sudo chmod +x /usr/local/bin/keep_alive/keep_alive.js
-  * Rename data file:                           mv /usr/local/bin/keep_alive/data.json.sample /usr/local/bin/keep_alive/data.json
+  * Rename data file:                           sudo mv /usr/local/bin/keep_alive/data.json.sample /usr/local/bin/keep_alive/data.json
   * Edit data file to add proper data:          sudo nano /usr/local/bin/keep_alive/data.json
   * Setup cron job:
     * Open crontab file using vi:               sudo EDITOR=vi crontab -e
