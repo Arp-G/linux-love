@@ -51,13 +51,13 @@
 
 Stream editor for filtering and transforming text
 
-* Replace a string with something else in a file, but don't modify the file 
+* Replace a string with something else in a file, but don't modify the file
 
-`sed 's/toReplace/withString/g filepath`
+`sed 's/toReplace/withString/g' filepath`
 
 Use the `-i` (inline) flag to modify and update the file
 
-`sed -i 's/toReplace/withString/g filepath`
+`sed -i 's/toReplace/withString/g' filepath`
 
 * To replace nth line, specify line number before `s/`
 
@@ -69,8 +69,8 @@ Use the `-i` (inline) flag to modify and update the file
 
 * Search for string only at begining of line or end of line
 
-`sed 's/^toReplace/withString/g filepath`
-`sed 's/toReplace$/withString/g filepath`
+`sed 's/^toReplace/withString/g' filepath`
+`sed 's/toReplace$/withString/g' filepath`
 
 * Delete every line that contains a word
 `sed '/word/d filepath`

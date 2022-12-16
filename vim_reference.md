@@ -44,6 +44,18 @@ Other options maybe go to command mode using `:` then try `"+p`
 
 Ref: https://linuxize.com/post/vim-find-replace/
 
+### Search
+
+Switch to normal mode using `Esc`
+
+Syntax: `/search string`
+
+* `/search string` Search from current cursor position to EOF; press `n` to jump to next search result
+* To search for a word use `/\<word/>`. Eg: Search for the term "ssh" using `/\<ssh/>`
+* Case insensitive search `/search string\c`
+
+### Find Replace
+
 Switch to normal mode using `Esc`
 
 Syntax: `:[range]s/{pattern}/{string}/[flags] [count]`

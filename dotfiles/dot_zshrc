@@ -162,3 +162,7 @@ fi
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # TODO setup custom alias file in "users are encouraged to define aliases within the ZSH_CUSTOM folder"
+#
+# ASDF Setup
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash

@@ -1,0 +1,20 @@
+{
+  "gigalixir": [
+    {
+      "name": "name",
+      "email": "email",
+      "password": "password"
+    }
+  ],
+  "hitUrls": [
+    "https://offsite.gigalixirapp.com/",
+    "https://pictionary.gigalixirapp.com/",
+    "https://pictionary-game.netlify.app/",
+    "https://bok-bok.herokuapp.com/",
+    "https://strangerz.herokuapp.com/",
+    "https://crypt-master.herokuapp.com/CryptMaster.html",
+    "https://socially-arp.herokuapp.com/",
+    "https://infinite-basin-47730.herokuapp.com/",
+    "https://arp-g.github.io/"
+  ]
+}
