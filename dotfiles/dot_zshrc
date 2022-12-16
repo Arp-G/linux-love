@@ -96,6 +96,7 @@ plugins=(
   kubectl                 # Completion for the Kubernetes cluster manager
   history                 # Convenient aliases for history commands
   zsh-syntax-highlighting # Syntax highlighting for zsh
+  zsh-auto-nvm-use        # Automatically loads the node version specified in .nvmrc                  https://github.com/Sparragus/zsh-auto-nvm-use
 )
 
 source $ZSH/oh-my-zsh.sh
