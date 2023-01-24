@@ -97,6 +97,7 @@ plugins=(
   history                 # Convenient aliases for history commands
   zsh-syntax-highlighting # Syntax highlighting for zsh
   zsh-auto-nvm-use        # Automatically loads the node version specified in .nvmrc                  https://github.com/Sparragus/zsh-auto-nvm-use
+  git z                   # Jump quickly to directories that you have visited frequently	      https://github.com/agkozak/zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
