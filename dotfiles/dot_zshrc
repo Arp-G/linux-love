@@ -96,8 +96,8 @@ plugins=(
   kubectl                 # Completion for the Kubernetes cluster manager
   history                 # Convenient aliases for history commands
   zsh-syntax-highlighting # Syntax highlighting for zsh
-  zsh-auto-nvm-use        # Automatically loads the node version specified in .nvmrc                  https://github.com/Sparragus/zsh-auto-nvm-use
-  git z                   # Jump quickly to directories that you have visited frequently	      https://github.com/agkozak/zsh-z
+  # zsh-auto-nvm-use      # Automatically loads the node version specified in .nvmrc                  https://github.com/Sparragus/zsh-auto-nvm-use
+  git z                   # Jump quickly to directories that you have visited frequently	            https://github.com/agkozak/zsh-z
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,6 +129,9 @@ autoload -U compinit && compinit # reload zsh-completions
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# My aliases
+alias iexs="iex -S mix phx.server"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -167,3 +170,14 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 # ASDF Setup
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+export PATH=/opt/homebrew/bin:/Users/arpan/.asdf/shims:/Users/arpan/.asdf/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# For compilers to find openssl
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/arpan/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/arpan/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/arpan/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/arpan/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
