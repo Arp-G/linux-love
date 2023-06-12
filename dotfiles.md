@@ -55,18 +55,29 @@ chezmoi init --apply https://github.com/Arp-G/linux-love
 chezmoi update -v
 ```
 
-## ZSH Plugins to install
+## New PC setup
 
-After setting up your dot files, install zsh plugins by...
+Apply chezmoid dot files `chezmoi init --apply https://github.com/Arp-G/linux-love`
 
-* powerlevel10k             -> `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
+Move the `chezmoid` installed `.oh-my-zsh` folder to a backup `.oh-my-zsh-backup`
 
-* zsh-autosuggestions       -> `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+Then install oh-my-zsh by: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-* zsh-completions           -> `git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions`
+Then copy the `custom` folder from the `.oh-my-zsh-backup` folder into the new `.oh-my-zsh` folder, after that you can remove the backup folder.
 
-* zsh-you-should-use        -> `git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use`
+Install zsh plugins by...
 
-* zsh-syntax-highlighting   -> `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/`
+* powerlevel10k             -> `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k`
 
-After adding the plugins run `source ~/.zshrc`
+* zsh-autosuggestions       -> `git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions`
+
+* zsh-completions           -> `git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions`
+
+* zsh-you-should-use        -> `git clone https://github.com/MichaelAquilina/zsh-you-should-use.git ~/.oh-my-zsh/custom/plugins/you-should-use`
+
+* zsh-syntax-highlighting   -> `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting`
+
+After adding the plugins run `source ~/.zshrc` (make sure to use the .zshrc from cherzmoid)
+
+
+Optionally run `p10k configure` to reconfigure themes.
