@@ -1,6 +1,6 @@
 # Systemd
 
-* Uisng systemd with elixir/erlang https://hauleth.dev/post/who-watches-watchmen-i/
+* Using systemd with elixir/erlang https://hauleth.dev/post/who-watches-watchmen-i/
 
 Unit file Ref: <https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files#types-of-units>
 Crash course: <https://www.youtube.com/watch?v=N1vgvhiyq0E&t=628s>
