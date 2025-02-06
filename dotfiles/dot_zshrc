@@ -173,7 +173,7 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH=/opt/homebrew/bin:/Users/arpan/.asdf/shims:/Users/arpan/.asdf/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # asdf binary
-export PATH="$HOME/bin:$PATH"`
+export PATH="$HOME/bin:$PATH"
 
 # set asdf data directory and shims
 export ASDF_DATA_DIR="/Users/arpan/.asdf"
