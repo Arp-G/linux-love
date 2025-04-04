@@ -98,7 +98,11 @@ plugins=(
   zsh-syntax-highlighting # Syntax highlighting for zsh
   # zsh-auto-nvm-use      # Automatically loads the node version specified in .nvmrc                  https://github.com/Sparragus/zsh-auto-nvm-use
   git z                   # Jump quickly to directories that you have visited frequently	            https://github.com/agkozak/zsh-z
+  zsh_codex               # Enables you to use OpenAI's Codex AI in the command line                  https://github.com/tom-doerr/zsh_codex
 )
+
+# For OpenAI's Codex. When you press Ctrl+X, Zsh will execute the create_completion widget
+bindkey '^X' create_completion
 
 source $ZSH/oh-my-zsh.sh
 
