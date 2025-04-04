@@ -1,0 +1,7 @@
+[service]
+service = groq_service
+
+[groq_service]
+api_type = groq
+api_key = {{ (bitwarden "groq_api_key").login.password }}
+model = llama-3.1-8b-instant
