@@ -33,6 +33,10 @@ export PATH=${PATH}:/usr/local/mysql/bin/
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
 
+# GPG uses a helper program (pinentry) to ask for the PIN
+# This tells this is the current terminal (tty) to use for prompting the PIN
+export GPG_TTY=$(tty)
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
