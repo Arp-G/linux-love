@@ -159,6 +159,8 @@ autoload -U compinit && compinit # reload zsh-completions
 
 # My aliases
 alias iexs="iex -S mix phx.server"
+alias mt="MIX_ENV=test mix test"
+alias mte="MIX_ENV=test iex -S mix test"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
